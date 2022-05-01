@@ -1,0 +1,102 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:util="clr-namespace:MicroinvestProject.Utilities">
+
+
+    <Style x:Key="BirthDateInvalidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsBirthDateValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strBirthDateInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsBirthDateValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PhoneInvalidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsPhoneValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strPhoneInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsPhoneValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="LastNameInvalidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsLastNameValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strLastNameInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsLastNameValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="NameInvalidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsNameValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strNameInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsNameValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="EmailInvalidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsEmailValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strEmailInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsEmailValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="FromDateInvalidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsFromDateValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strFromDateInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsFromDateValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ToDateInvalidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsToDateValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strToDateInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsToDateValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PeriodInValidMessage" TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value=" " />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsPeriodValid}" Value="false">
+                <Setter Property="Text" Value="{util:Localization strPeriodInvalid}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsPeriodValid}" Value="true">
+                <Setter Property="Text" Value=" " />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

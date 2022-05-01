@@ -1,0 +1,56 @@
+﻿<Application
+    x:Class="Client.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Client.Resources.Converters"
+    xmlns:viewModels="clr-namespace:Client.ViewModels"
+    xmlns:views="clr-namespace:Client.Views"
+    StartupUri="/Views/StartupWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Views/Dictionaries/ButtonStyles.xaml" />
+                <ResourceDictionary Source="Views/Dictionaries/CalendarStyles.xaml" />
+                <ResourceDictionary Source="Views/Dictionaries/TextBlockStyles.xaml" />
+                <ResourceDictionary Source="Views/Dictionaries/GridStyles.xaml" />
+                <ResourceDictionary Source="Views/Dictionaries/LoaderStyle.xaml" />
+                <ResourceDictionary Source="Views/Dictionaries/IconStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converter:OppositeConverter x:Key="OppositeConverter" />
+
+            <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
+                <views:MainView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SelectDatabaseViewModel}">
+                <views:SelectDatabaseView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SearchCarViewModel}">
+                <views:SearchCarView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SelectCarViewModel}">
+                <views:SelectCarView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SelectedCarViewModel}">
+                <views:SelectedCarView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:ClientInformationViewModel}">
+                <views:ClientInformationView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SuccessfulReservationViewModel}">
+                <views:SuccessfulReservationView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:NotFoundCarsViewModel}">
+                <views:NotFoundCarsView />
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

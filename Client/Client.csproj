@@ -1,0 +1,87 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\CarIcon.ico</ApplicationIcon>
+    <Win32Resource />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\BG.png" />
+    <None Remove="Images\calendar.png" />
+    <None Remove="Images\Capacity_Icon.png" />
+    <None Remove="Images\CarIcon.ico" />
+    <None Remove="Images\Car_Icon.png" />
+    <None Remove="Images\Car_Icon_Blue.png" />
+    <None Remove="Images\date_icon.png" />
+    <None Remove="Images\Ecar_Icon.png" />
+    <None Remove="Images\Ecar_Icon_Blue.png" />
+    <None Remove="Images\EN.png" />
+    <None Remove="Images\FuelConsumption_Icon.png" />
+    <None Remove="Images\location2_icon.png" />
+    <None Remove="Images\location_icon.png" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Images\Nissan.jpg" />
+    <None Remove="Images\Nissan_Qashqai.png" />
+    <None Remove="Images\not_seen_icon.jpg" />
+    <None Remove="Images\not_seen_icon.png" />
+    <None Remove="Images\Renault.jpg" />
+    <None Remove="Images\Renault_Clio.png" />
+    <None Remove="Images\seen_icon.png" />
+    <None Remove="Images\time_icon.png" />
+    <None Remove="Images\Toyota_Corolla.png" />
+    <None Remove="Images\Truck_Icon.png" />
+    <None Remove="Images\Truck_Icon_Blue.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\calendar.png" />
+    <Resource Include="Images\Capacity_Icon.png" />
+    <Resource Include="Images\date_icon.png" />
+    <Resource Include="Images\Ecar_Icon_Blue.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\BG.png" />
+    <Content Include="Images\CarIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <PackageReference Include="FontAwesome5" Version="2.1.6" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <ProjectReference Include="..\Database\Database.csproj" />
+    <Resource Include="Images\Car_Icon_Blue.png" />
+    <Resource Include="Images\Car_Icon.png" />
+    <Resource Include="Images\Ecar_Icon.png" />
+    <Resource Include="Images\FuelConsumption_Icon.png" />
+    <Resource Include="Images\location2_icon.png" />
+    <Resource Include="Images\location_icon.png" />
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\Nissan_Qashqai.png" />
+    <Resource Include="Images\not_seen_icon.png" />
+    <Resource Include="Images\Renault_Clio.png" />
+    <Resource Include="Images\seen_icon.png" />
+    <Resource Include="Images\time_icon.png" />
+    <Resource Include="Images\EN.png" />
+    <Resource Include="Images\Toyota_Corolla.png" />
+    <Resource Include="Images\Truck_Icon_Blue.png" />
+    <Resource Include="Images\Truck_Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

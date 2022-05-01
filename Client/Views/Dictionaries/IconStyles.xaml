@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:fa5="http://schemas.fontawesome.com/icons/">
+
+    <Style x:Name="ImageStyle" TargetType="{x:Type fa5:ImageAwesome}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsPasswordVisible}" Value="false">
+                <Setter Property="Icon" Value="Regular_Eye" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsPasswordVisible}" Value="true">
+                <Setter Property="Icon" Value="Regular_EyeSlash" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
