@@ -33,6 +33,7 @@ namespace Client.ViewModels
             Languages = new List<Language>();
             Languages.Add(new Language("English", @"/Images/EN.png"));
             Languages.Add(new Language("Български", @"/Images/BG.png"));
+
             if (!string.IsNullOrEmpty(SettingsManager.Language))
             {
                 SelectedLanguage = Languages.Where(l => l.Lang.ToString() == SettingsManager.Language).FirstOrDefault();

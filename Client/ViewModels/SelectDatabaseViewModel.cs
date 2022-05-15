@@ -2,11 +2,13 @@
 using Client.Commands;
 using Client.Helpers;
 using Client.Settings;
-using Database;
-using Database.Repositories;
+using Database.Enums;
 using MicroinvestProject.Utilities;
 using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -42,6 +44,7 @@ namespace Client.ViewModels
 
         public SelectDatabaseViewModel()
         {
+            SetLanguage();
             IsPasswordVisible = false;
             IsCreatingNewDb = false;
             Databases = new ObservableCollection<string>();
@@ -261,7 +264,7 @@ namespace Client.ViewModels
 
         private void LoadDatabases(object e)
         {
-            if (Validate())
+            if (!string.IsNullOrEmpty(ServerName) || !string.IsNullOrEmpty(DatabaseName))
             {
                 if (Databases.Count == 0)
                 {
@@ -288,9 +291,25 @@ namespace Client.ViewModels
 
         private bool Validate()
         {
-            return !string.IsNullOrEmpty(ServerName) || !string.IsNullOrEmpty(Username) || !string.IsNullOrEmpty(DatabaseName);
+            return !string.IsNullOrEmpty(ServerName) && !string.IsNullOrEmpty(DatabaseName);
         }
 
+
+        private void SetLanguage()
+        {
+            if(string.IsNullOrEmpty(SettingsManager.Language))
+            {
+                SettingsManager.Language = "English";
+            }
+
+            var lang = Enum.Parse(typeof(LanguageEnum), SettingsManager.Language);
+
+            FieldInfo fieldInfo = lang.GetType().GetField(lang.ToString());
+
+            DescriptionAttribute[] descriptionAttributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(descriptionAttributes[0].Description);
+        }
         #endregion
     }
 }
